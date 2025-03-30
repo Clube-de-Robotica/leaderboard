@@ -45,7 +45,7 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Leaderboard</title>
-     <link rel="stylesheet" href="/leaderboard/styles.css">
+     <link rel="stylesheet" href="/styles.css">
  </head>
  <body>
      <div class="carousel-container">
@@ -56,7 +56,7 @@
                  <div class="carousel-item <% if (index === 0) { %> active <% } %>">
                     <div class="leaderboard-header">
                         <h1><%= sheetName %></h1>
-                        <img src="/leaderboard/<%= sheetName %>.png" alt="Logo" class="leaderboard-logo">
+                        <img src="/<%= sheetName %>.png" alt="Logo" class="leaderboard-logo">
                     </div>
                      <table>
                          <thead>
@@ -83,7 +83,7 @@
          <button class="carousel-btn right-btn" onclick="nextSlide()">&#10095;</button>
      </div>
  
-     <script src="/leaderboard/script.js"></script>
+     <script src="/script.js"></script>
  </body>
  </html>
  

@@ -50,7 +50,7 @@ fetchXLSX();
 setInterval(fetchXLSX, 1 * 60 * 1000);
 
 // Route to display leaderboard
-app.get("/leaderboard/", (req, res) => {
+app.get("/", (req, res) => {
     const leaderboardData = readXLSX();
     res.render("index", { leaderboardData });
 });
