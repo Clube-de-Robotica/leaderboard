@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Gotham Bold";
+    src: url("Gotham\ Bold.otf") format("opentype");
+}
+
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Gotham Bold";
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px; /* Creates a deeper 3D effect */
+}
+
+.carousel {
+    display: flex;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    max-width: 1700px;
+    min-height: 200px; /* Ensures a minimum height */
+    padding: 20px;
+    background: rgba(30, 58, 138, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.3s ease-in-out, transform 0.6s, opacity 0.6s, z-index 0s linear 0.3s;
+}
+
+.carousel-item.active {
+    transform: translateX(0) scale(1) rotateY(0deg);
+    opacity: 1;
+    z-index: 1;
+    background: #2563EB;
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.carousel-item.prev {
+    transform: translateX(-60%) scale(0.8) rotateY(10deg);
+    opacity: 0.4;
+    z-index: 3;
+}
+
+.carousel-item.next {
+    transform: translateX(60%) scale(0.8) rotateY(-10deg);
+    opacity: 0.4;
+    z-index: 3;
+}
+
+.carousel-item table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid white;
+}
+
+th {
+    background: #3B82F6;
+}
+
+tbody tr:nth-child(even) {
+    background: #1E3A8A;
+}
+
+/* Move buttons closer to the active board */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    transition: background 0.3s;
+    z-index: 4;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.left-btn {
+    left: -10%;
+}
+
+.right-btn {
+    right: -10%;
+}
+
+.leaderboard-header {
+    display: flex;
+    align-items: center; /* Align title and logo */
+    justify-content: center; /* Center them */
+    gap: 50px; /* Space between title and logo */
+    padding: 1px;
+}
+
+.leaderboard-logo {
+    width: 90px; /* Adjust as needed */
+    height: auto;
+}
